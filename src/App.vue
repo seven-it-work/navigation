@@ -6,12 +6,12 @@ import MainContainer from "./components/MainContainer.vue"
 
 <template>
   <!--背景视频-->
-<!--  <div class="video-bg">-->
-<!--    <video width="320" height="240" autoplay loop muted>-->
-<!--      <source src="https://assets.codepen.io/3364143/7btrrd.mp4" type="video/mp4">-->
-<!--      Your browser does not support the video tag.-->
-<!--    </video>-->
-<!--  </div>-->
+  <div class="video-bg">
+    <video width="320" height="240" autoplay loop muted>
+      <source src="https://assets.codepen.io/3364143/7btrrd.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
   <!--黑白模式切换-->
   <div class="dark-light">
     <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"

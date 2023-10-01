@@ -8,7 +8,7 @@
     <!--        logo-->
     <div class="menu-circle">logo</div>
     <div class="header-menu">
-      <a class="menu-link is-active" href="#">顶部1</a>
+      <a class="menu-link is-active" href="#"></a>
       <a class="menu-link notify" href="#">顶部2</a>
       <a class="menu-link" href="#">顶部3</a>
       <a class="menu-link notify" href="#">顶部4</a>
