@@ -1,0 +1,1 @@
+import{o as n,c as r,a as _}from"./index-978924fa.js";const a=(t,e)=>{const o=t.__vccOpts||t;for(const[c,s]of e)o[c]=s;return o},d={},i={class:"about"},l=_("h1",null,"自己收集的导航栏",-1),f=[l];function u(t,e){return n(),r("div",i,f)}const p=a(d,[["render",u]]);export{p as default};
