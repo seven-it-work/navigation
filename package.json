@@ -9,7 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
     "ant-design-vue": "^4.1.2",
+    "dayjs": "^1.11.10",
     "sass": "^1.68.0",
     "sass-loader": "^13.3.2",
     "vue": "^3.3.4",
