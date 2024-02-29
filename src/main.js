@@ -1,5 +1,6 @@
-import { createApp } from 'vue'
-import './style.scss'
+import {createApp} from 'vue'
 import App from './App.vue'
+import ant from 'ant-design-vue'
+import router from "./v2/router/index.js";
 
-createApp(App).mount('#app')
+createApp(App).use(ant).use(router).mount('#app')
