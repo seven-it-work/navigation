@@ -3,6 +3,7 @@ import {reactive, ref} from 'vue';
 
 import {FilterOutlined, SearchOutlined} from '@ant-design/icons-vue';
 import db from "../data.js";
+import {pinyin} from 'pinyin-pro';
 
 const dataSource = db;
 const state = reactive({
@@ -59,7 +60,9 @@ const columns = [
     customFilterDropdown: true,
     onFilter: (value, record) => {
       if (value) {
-        return record.title.toString().toLowerCase().includes(value.toLowerCase())
+        console.log(pinyin(value, {toneType: 'none'}))
+        return record.title.toLowerCase().includes(value.toLowerCase()) ||
+            pinyin(record.title, {toneType: 'none'}).replace(" ","").toLocaleLowerCase().includes(value.toLocaleLowerCase())
       } else {
         return true
       }
@@ -86,7 +89,8 @@ const columns = [
     customFilterDropdown: true,
     onFilter: (value, record) => {
       if (value) {
-        return record.description.toString().toLowerCase().includes(value.toLowerCase())
+        return record.description.toLowerCase().includes(value.toLowerCase()) ||
+            pinyin(record.description, {toneType: 'none'}).replace(" ","").toLocaleLowerCase().includes(value.toLocaleLowerCase())
       } else {
         return true
       }
@@ -105,8 +109,8 @@ const columns = [
     dataIndex: 'tags',
     key: 'tags',
     filters: tagsAll,
-    filterMode: 'tree',
-    filterSearch: true,
+    filterSearch: (input, filter) => filter.value.toLocaleUpperCase().includes(input.toLocaleUpperCase()) ||
+        pinyin(filter.value, {toneType: 'none'}).replace(" ","").toLocaleLowerCase().includes(input.toLocaleLowerCase()),
     onFilter: (value, record) => {
       if (value) {
         return record.tags.includes(value)
@@ -144,8 +148,8 @@ const handleReset = clearFilters => {
 };
 </script>
 <template>
-<!--  {{ tagColor }}-->
-  <a-table :dataSource="dataSource" :columns="columns">
+  <!--  {{ tagColor }}-->
+  <a-table :dataSource="dataSource" :columns="columns" style="background: white">
     <template #headerCell="{ column }">
       <template v-if="column.key === 'title'">
         <span>
