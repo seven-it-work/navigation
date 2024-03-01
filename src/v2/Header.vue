@@ -1,7 +1,9 @@
 <script setup>
 import {h, ref} from 'vue';
-import {HomeOutlined, AppstoreOutlined, SettingOutlined} from '@ant-design/icons-vue';
-import { useRouter } from 'vue-router'
+import {HomeOutlined, SearchOutlined, SettingOutlined} from '@ant-design/icons-vue';
+import {useRouter} from 'vue-router'
+import { message } from 'ant-design-vue';
+
 const route = useRouter()
 
 const current = ref(['home']);
@@ -70,12 +72,54 @@ const items = ref([
 ]);
 
 const onClick = (data) => {
-  route.push({name:data.key})
+  route.push({name: data.key})
+}
+
+const searchValue = ref('')
+const searchEngine = ref('baidu')
+
+const onSearch = () => {
+  console.log(1)
+  if (!searchValue.value) {
+    message.error("请输入搜索内容")
+    return;
+  }
+  switch (searchEngine.value) {
+    case 'baidu':
+      window.open(`https://www.baidu.com/s?wd=${searchValue.value}`, '_blank');
+      break;
+    case 'bing':
+      window.open(`https://cn.bing.com/search?q=${searchValue.value}`, '_blank');
+      break;
+    case 'google':
+      window.open(`https://www.google.com/search?q=${searchValue.value}`, '_blank');
+      break;
+    case 'sogo':
+      window.open(`https://www.sogou.com/sogou?query=${searchValue.value}`, '_blank');
+      break;
+  }
 }
 </script>
 
 <template>
-  <a-menu v-model:selectedKeys="current" mode="horizontal" :items="items" @click="onClick"/>
+  <a-row>
+    <a-col :span="12">
+      <a-menu v-model:selectedKeys="current" mode="horizontal" :items="items" @click="onClick"/>
+    </a-col>
+    <a-col :span="12" style="background-color: white">
+      <a-input-search v-model:value="searchValue" size="large"
+                      @search="onSearch">
+        <template #addonBefore>
+          <a-select v-model:value="searchEngine" style="width: 90px;">
+            <a-select-option value="baidu">百度</a-select-option>
+            <a-select-option value="bing">必应</a-select-option>
+            <a-select-option value="google">谷歌(外)</a-select-option>
+            <a-select-option value="sogo">搜狗</a-select-option>
+          </a-select>
+        </template>
+      </a-input-search>
+    </a-col>
+  </a-row>
 </template>
 
 <style scoped>
