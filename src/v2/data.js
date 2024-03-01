@@ -111,6 +111,14 @@ const db = [
         guoNei: true,
         account: '',
     },
+    {
+        title: 'imagecolorizer【图像处理】',
+        link: 'https://imagecolorizer.com/zh-tw',
+        description: '1.免費自動為黑白照片上色\n2.透過放大臉部和細節，修復老照片。\n3.修復模糊和低質量的老照片，使其更清晰',
+        tags: ['AI','图片处理'],
+        guoNei: true,
+        account: '',
+    },
 ]
 for (let i = 0; i < db.length; i++) {
     db[i].key = i;

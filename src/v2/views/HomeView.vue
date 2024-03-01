@@ -4,54 +4,13 @@ import {reactive, ref} from 'vue';
 import {FilterOutlined, SearchOutlined} from '@ant-design/icons-vue';
 import db from "../data.js";
 import {pinyin} from 'pinyin-pro';
+import {tagColor, tagsAll} from "../tagColors.js";
 
 const dataSource = db;
 const state = reactive({
   searchText: '',
   searchedColumn: '',
 });
-
-function color16() {
-  let r = Math.floor(Math.random() * 256);
-  let g = Math.floor(Math.random() * 256);
-  let b = Math.floor(Math.random() * 256);
-  return '#' + r.toString(16) + g.toString(16) + b.toString(16);
-}
-
-const tagsAll = Array.from(new Set(db.flatMap(item => item.tags))).map(item => {
-  return {
-    text: item,
-    value: item,
-  }
-})
-const tagColor = {
-  "游戏源码": "#d9d1c0",
-  "游戏": "#db95d6",
-  "java": "#1be745",
-  "编程": "#eb333a",
-  "博客": "#2e2bd5",
-  "steam": "#ba27da",
-  "会员账号租聘": "#5986bc",
-  "随机": "#fd5b54",
-  "生活": "#2a36aa",
-  "GPT": "#6aa139",
-  "AI": "#a1a116",
-  "像素角色": "#49911b",
-  "像素": "#492e50",
-  "游戏素材": "#d6d033",
-  "maven": "#2b9f36",
-  "编码": "#a562d3",
-  "AI绘画": "#8911c4",
-  "H游戏": "#fe2f4c",
-  "随机名称生成器": "#52c667"
-}
-tagsAll.forEach(item => {
-  if (!tagColor[item.value]) {
-    tagColor[item.value] = color16()
-  }
-})
-console.log(tagColor)
-
 const columns = [
   {
     title: '标题',
@@ -155,10 +114,9 @@ function handleResizeColumn(w, col) {
   col.width = w;
 }
 
-const maxTalbeY=window.innerHeight-200
+const maxTalbeY = window.innerHeight - 200
 </script>
 <template>
-  <!--  {{ tagColor }}-->
   <a-table :dataSource="dataSource" :columns="columns" style="background: white" :pagination="{ pageSize: 100 }"
            :scroll="{ y: maxTalbeY,x: 1500 }" @resizeColumn="handleResizeColumn">
     <template #headerCell="{ column }">
