@@ -43,7 +43,7 @@ tagsAll.forEach(item => {
 })
 
 if (window.location.href.includes("5173")) {
-    await navigator.clipboard.writeText(JSON.stringify(tagColor));
+     navigator.clipboard.writeText(JSON.stringify(tagColor));
 }
 
 export {tagsAll, tagColor}
