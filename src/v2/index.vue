@@ -2,18 +2,13 @@
 import './style.scss'
 
 import Header from "./Header.vue";
+
 </script>
 
 <template>
-<!--  https://assets.codepen.io/3364143/7btrrd.mp4" -->
+  <!--  https://assets.codepen.io/3364143/7btrrd.mp4" -->
   <div class="video-bg1">
     <video autoplay loop muted>
-      <source src="http://www.xfubk.com/api.php" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-  <div class="video-bg2">
-    <video  autoplay loop muted>
       <source src="http://www.xfubk.com/api.php" type="video/mp4">
       Your browser does not support the video tag.
     </video>
