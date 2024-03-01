@@ -62,7 +62,7 @@ const columns = [
       if (value) {
         console.log(pinyin(value, {toneType: 'none'}))
         return record.title.toLowerCase().includes(value.toLowerCase()) ||
-            pinyin(record.title, {toneType: 'none'}).replace(" ","").toLocaleLowerCase().includes(value.toLocaleLowerCase())
+            pinyin(record.title, {toneType: 'none'}).replace(" ", "").toLocaleLowerCase().includes(value.toLocaleLowerCase())
       } else {
         return true
       }
@@ -75,12 +75,16 @@ const columns = [
       }
     },
     ellipsis: true,
+    resizable: true,
+    fixed: 'left',
+    width: 200,
   },
   {
     title: '链接',
     dataIndex: 'link',
     key: 'link',
     ellipsis: true,
+    resizable: true,
   },
   {
     title: '描述',
@@ -90,7 +94,7 @@ const columns = [
     onFilter: (value, record) => {
       if (value) {
         return record.description.toLowerCase().includes(value.toLowerCase()) ||
-            pinyin(record.description, {toneType: 'none'}).replace(" ","").toLocaleLowerCase().includes(value.toLocaleLowerCase())
+            pinyin(record.description, {toneType: 'none'}).replace(" ", "").toLocaleLowerCase().includes(value.toLocaleLowerCase())
       } else {
         return true
       }
@@ -102,7 +106,7 @@ const columns = [
         }, 100);
       }
     },
-    ellipsis: true,
+    ellipsis: true, resizable: true,
   },
   {
     title: '标签',
@@ -110,7 +114,7 @@ const columns = [
     key: 'tags',
     filters: tagsAll,
     filterSearch: (input, filter) => filter.value.toLocaleUpperCase().includes(input.toLocaleUpperCase()) ||
-        pinyin(filter.value, {toneType: 'none'}).replace(" ","").toLocaleLowerCase().includes(input.toLocaleLowerCase()),
+        pinyin(filter.value, {toneType: 'none'}).replace(" ", "").toLocaleLowerCase().includes(input.toLocaleLowerCase()),
     onFilter: (value, record) => {
       if (value) {
         return record.tags.includes(value)
@@ -118,19 +122,19 @@ const columns = [
         return true
       }
     },
-    ellipsis: true,
+    ellipsis: true, resizable: true,
   },
   {
     title: '访问',
     dataIndex: 'guoNei',
     key: 'guoNei',
-    ellipsis: true,
+    ellipsis: true, resizable: true,
   },
   {
     title: '操作',
     dataIndex: 'action',
     key: 'action',
-    ellipsis: true,
+    ellipsis: true, resizable: true,
   },
 ]
 const searchInput = ref();
@@ -146,10 +150,17 @@ const handleReset = clearFilters => {
   });
   state.searchText = '';
 };
+
+function handleResizeColumn(w, col) {
+  col.width = w;
+}
+
+const maxTalbeY=window.innerHeight-200
 </script>
 <template>
   <!--  {{ tagColor }}-->
-  <a-table :dataSource="dataSource" :columns="columns" style="background: white">
+  <a-table :dataSource="dataSource" :columns="columns" style="background: white" :pagination="{ pageSize: 100 }"
+           :scroll="{ y: maxTalbeY,x: 1500 }" @resizeColumn="handleResizeColumn">
     <template #headerCell="{ column }">
       <template v-if="column.key === 'title'">
         <span>

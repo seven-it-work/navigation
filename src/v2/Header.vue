@@ -1,6 +1,6 @@
 <script setup>
 import {h, ref} from 'vue';
-import {MailOutlined, AppstoreOutlined, SettingOutlined} from '@ant-design/icons-vue';
+import {HomeOutlined, AppstoreOutlined, SettingOutlined} from '@ant-design/icons-vue';
 import { useRouter } from 'vue-router'
 const route = useRouter()
 
@@ -8,7 +8,7 @@ const current = ref(['home']);
 const items = ref([
   {
     key: 'home',
-    // icon: () => h(MailOutlined),
+    icon: () => h(HomeOutlined),
     label: '首页',
     title: '首页',
   },
@@ -18,12 +18,7 @@ const items = ref([
     label: '关于',
     title: '关于',
   },
-  // {
-  //   key: 'app',
-  //   icon: () => h(AppstoreOutlined),
-  //   label: 'Navigation Two',
-  //   title: 'Navigation Two',
-  // },
+
   // {
   //   key: 'sub1',
   //   icon: () => h(SettingOutlined),
