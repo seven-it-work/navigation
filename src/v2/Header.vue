@@ -2,7 +2,7 @@
 import {h, ref} from 'vue';
 import {HomeOutlined, SearchOutlined, SettingOutlined} from '@ant-design/icons-vue';
 import {useRouter} from 'vue-router'
-import { message } from 'ant-design-vue';
+import {message} from 'ant-design-vue';
 
 const route = useRouter()
 
@@ -75,15 +75,16 @@ const onClick = (data) => {
   route.push({name: data.key})
 }
 
-const searchValue = ref('')
-const searchEngine = ref('baidu')
+const searchValue = ref($cookies.get('searchValue') || '')
+const searchEngine = ref($cookies.get('searchEngine') || 'baidu')
 
 const onSearch = () => {
-  console.log(1)
   if (!searchValue.value) {
     message.error("请输入搜索内容")
     return;
   }
+  $cookies.set('searchValue',searchValue.value)
+  $cookies.set('searchEngine',searchEngine.value)
   switch (searchEngine.value) {
     case 'baidu':
       window.open(`https://www.baidu.com/s?wd=${searchValue.value}`, '_blank');

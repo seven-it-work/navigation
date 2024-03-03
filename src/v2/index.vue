@@ -1,17 +1,17 @@
 <script setup>
 import './style.scss'
-import {SyncOutlined , StepBackwardOutlined, SwapOutlined} from '@ant-design/icons-vue';
+import {SyncOutlined, StepBackwardOutlined, SwapOutlined} from '@ant-design/icons-vue';
 
 import Header from "./Header.vue";
 import {ref} from "vue";
 
 const topicLit = ['随机视频', '固定视频', '无视频']
-const topicIndex = ref(0)
+const topicIndex = ref(Number.parseInt($cookies.get("topicIndex")) || 0)
 const changeTopic = () => {
   topicIndex.value = (topicIndex.value + 1) % 3
-  console.log("切换为了：" + topicLit[topicIndex.value])
+  $cookies.set("topicIndex", topicIndex.value)
 }
-const changeVideo=()=>{
+const changeVideo = () => {
   document.getElementById("video").load()
 }
 </script>
@@ -25,12 +25,12 @@ const changeVideo=()=>{
     </video>
   </div>
   <div class="video-bg2" v-else-if="topicIndex===1">
-    <video autoplay loop muted >
+    <video autoplay loop muted>
       <source src="https://assets.codepen.io/3364143/7btrrd.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
   </div>
-  <div  v-else>
+  <div v-else>
   </div>
   <a-float-button-group shape="square">
     <a-tooltip title="切换视频">
