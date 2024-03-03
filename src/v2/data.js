@@ -105,7 +105,7 @@ const db = [
     },
     {
         title: 'H游戏PC端',
-        link: 'https://pan.baidu.com/s/1KLYWnP30PM4KMk_L2hrH_w?pwd=8888\n',
+        link: 'https://gteam_seven.gitee.io/game-collection',
         description: 'H游戏 ⑱禁✘',
         tags: ['H游戏','游戏'],
         guoNei: true,
