@@ -19,7 +19,6 @@ const columns = [
     customFilterDropdown: true,
     onFilter: (value, record) => {
       if (value) {
-        console.log(pinyin(value, {toneType: 'none'}))
         return record.title.toLowerCase().includes(value.toLowerCase()) ||
             pinyin(record.title, {toneType: 'none'}).replace(" ", "").toLocaleLowerCase().includes(value.toLocaleLowerCase())
       } else {
@@ -115,6 +114,7 @@ function handleResizeColumn(w, col) {
 }
 
 const maxTalbeY = window.innerHeight - 200
+
 </script>
 <template>
   <a-table :dataSource="dataSource" :columns="columns" style="background: white" :pagination="{ pageSize: 100 }"
