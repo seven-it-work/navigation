@@ -1,5 +1,5 @@
 import db from "./data.js";
-import Clipboard from 'clipboard';
+// import Clipboard from 'clipboard';
 
 function color16() {
     let r = Math.floor(Math.random() * 256);
@@ -43,7 +43,7 @@ tagsAll.forEach(item => {
 })
 
 if (window.location.href.includes("5173")) {
-     navigator.clipboard.writeText(JSON.stringify(tagColor));
+     // navigator.clipboard.writeText(JSON.stringify(tagColor));
 }
 
 export {tagsAll, tagColor}
