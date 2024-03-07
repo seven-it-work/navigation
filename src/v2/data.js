@@ -119,6 +119,14 @@ const db = [
         guoNei: true,
         account: '',
     },
+    {
+        title: '易制地图',
+        link: 'https://www.makeamap.cn/',
+        description: '地图制作器',
+        tags: ['游戏开发','地图制作器'],
+        guoNei: true,
+        account: '',
+    },
 ]
 for (let i = 0; i < db.length; i++) {
     db[i].key = i;
