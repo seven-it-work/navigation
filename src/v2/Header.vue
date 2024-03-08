@@ -15,10 +15,10 @@ const items = ref([
     title: '首页',
   },
   {
-    key: 'about',
+    key: 'work',
     // icon: () => h(MailOutlined),
-    label: '关于',
-    title: '关于',
+    label: '工作',
+    title: '工作',
   },
 
   // {
