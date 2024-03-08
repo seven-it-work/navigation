@@ -33,6 +33,41 @@ const dataSource = [{
   tags: ['原始需求', '配置管理', '测试环境'],
   guoNei: true,
   account: '',
+},{
+  title: '原始需求-发布流水线',
+  link: 'https://edevops.huawei.com/mine/components/10063900/pipeline/list/158156',
+  description: '',
+  tags: ['原始需求', '发布', '测试环境', '正式环境'],
+  guoNei: true,
+  account: '',
+},{
+  title: '原始需求-前端资源平台',
+  link: 'http://console.his-beta.huawei.com/wcm/#/staticresource/staticresourceDeploy.html',
+  description: '',
+  tags: ['原始需求', '前端资源', '测试环境'],
+  guoNei: true,
+  account: '',
+},{
+  title: '原始需求-ALB',
+  link: 'https://console.his-beta.huawei.com/alb/#/appOverview?servicealias=alb&app_id=com.huawei.ipd.rawreq',
+  description: '',
+  tags: ['原始需求', '测试环境'],
+  guoNei: true,
+  account: '',
+},{
+  title: '原始需求-数据库-测试环境',
+  link: 'https://console-kwe.his-beta.huawei.com/dbadvisor/#/instanceDashboard',
+  description: '',
+  tags: ['原始需求', '测试环境','数据库'],
+  guoNei: true,
+  account: '',
+},{
+  title: '心声 征婚',
+  link: 'https://xinsheng.huawei.com/next/#/list?id=713534611705233408&cid=713570454708776960&flag=all&search=&sort=createTime&type=all&p=1',
+  description: '',
+  tags: ['摸鱼', '心声','数据库'],
+  guoNei: true,
+  account: '',
 },];
 const state = reactive({
   searchText: '',
