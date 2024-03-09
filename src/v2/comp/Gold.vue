@@ -16,13 +16,9 @@ export default {
     }
   },
   mounted() {
-
-    // 接口1 http://gold.cnfol.com/fol_inc/v6.0/Gold/goldhq/json/g/autd/KlDayS.json?t=0.11493099542321916
-    // 接口2 https://api.jisuapi.com/gold/shgold?appkey=361c76d92622c7b7  限制一天100次
-    // 接口3 http://www3.ccb.com/cn/home/news/trendchart/day/999933.js
-    axios.get("http://www3.ccb.com/cn/home/news/trendchart/day/999933.js").then(res3=>{
+    console.log(goldData)
       this.ccbListShow=true
-      this.ccbList=res3.data
+      this.ccbList=goldData
       setTimeout(()=>{
         const chartDom = document.getElementById('ccbListShow');
         const myChart = echarts.init(chartDom);
@@ -138,21 +134,6 @@ export default {
 
         optionZf && zfMyChart.setOption(optionZf);
       },1000)
-    }).catch(error=>{
-      console.log("请求失败,准备下个接口",error)
-      let jisuapiGold = $cookies.get('jisuapiGold')
-      if (!jisuapiGold) {
-        axios.get("https://api.jisuapi.com/gold/shgold?appkey=361c76d92622c7b7").then(res => {
-          if (res.status === 0) {
-            $cookies.set('jisuapiGold', res.result)
-          } else {
-            console.log("请求失败")
-          }
-        }).catch(error => {
-          console.log("请求失败")
-        })
-      }
-    })
   }
 }
 </script>
