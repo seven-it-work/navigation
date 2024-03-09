@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as o,a as s}from"./index-305a24a1.js";const c={},a={class:"about",style:{background:"white"}},n=s("h1",null,"自己收集的导航栏",-1),_=[n];function r(d,i){return t(),o("div",a,_)}const u=e(c,[["render",r]]);export{u as default};
