@@ -20,6 +20,12 @@ const items = ref([
     label: '工作',
     title: '工作',
   },
+  {
+    key: 'project',
+    // icon: () => h(MailOutlined),
+    label: '我的项目',
+    title: '我的项目',
+  },
 
   // {
   //   key: 'sub1',
