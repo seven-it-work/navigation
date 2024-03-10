@@ -6,69 +6,72 @@ import {pinyin} from 'pinyin-pro';
 import {tagColor, tagsAll} from "../tagColors.js";
 
 const dataSource = [{
-  title: '本地导航',
-  link: 'localhost:8991',
+  title: '生活博客打包',
+  gitee: 'https://gitee.com/GTeam_seven/love',
   description: '',
-  tags: ['导航'],
-  guoNei: true,
-  account: '',
+  tags: ['生活博客'],
+  gitHub: 'https://github.com/seven-it-work/love',
+},{
+  title: '生活博客源码',
+  gitee: '',
+  description: '',
+  tags: ['生活博客'],
+  gitHub: 'https://github.com/seven-it-work/love-source',
+},{
+  title: '技术博客源码',
+  gitee: 'https://gitee.com/GTeam_seven/my-blog',
+  description: '',
+  tags: ['技术博客'],
+  gitHub: 'https://github.com/seven-it-work/my-blog',
+},{
+  title: '导航源码',
+  gitee: 'https://gitee.com/GTeam_seven/navigation',
+  description: '',
+  tags: ['技术博客'],
+  gitHub: 'https://github.com/seven-it-work/navigation',
+},{
+  title: '游戏集合',
+  gitee: 'https://gitee.com/GTeam_seven/game-collection',
+  description: '',
+  tags: ['游戏'],
+  gitHub: '',
+},{
+  title: 'win自动任务程序',
+  gitee: '',
+  description: '',
+  tags: ['win自动任务程序'],
+  gitHub: 'https://github.com/seven-it-work/personal-assistant',
+},{
+  title: '图床',
+  gitee: 'https://gitee.com/GTeam_seven/drawing-bed',
+  description: '',
+  tags: ['图床'],
+  gitHub: '',
+},{
+  title: '江湖文字游戏',
+  gitee: '',
+  description: '',
+  tags: ['游戏'],
+  gitHub: 'https://github.com/seven-it-work/MyJangHu',
+},{
+  title: 'mud-game',
+  gitee: '',
+  description: '',
+  tags: ['游戏'],
+  gitHub: 'https://github.com/seven-it-work/mud-game',
+},{
+  title: '电子书收集',
+  gitee: '',
+  description: '',
+  tags: ['电子书'],
+  gitHub: 'https://github.com/seven-it-work/book',
 }, {
-  title: '打卡记录',
-  link: 'localhost:8080',
-  description: '',
-  tags: ['打卡'],
-  guoNei: true,
-  account: '',
-}, {
-  title: '原始需求-应用管理-测试环境',
-  link: 'https://console-kwe.his-beta.huawei.com/ads/#/appDeployment?app_id=com.huawei.ipd.rawreq&duName=JDCRawReq',
-  description: '',
-  tags: ['原始需求', '应用管理', '测试环境'],
-  guoNei: true,
-  account: '',
-},{
-  title: '原始需求-配置管理-测试环境',
-  link: 'https://console-kwe.his-beta.huawei.com/webconfigcenter/#/subAppConfig/viewAllConfig?servicealias=appconfigcenter&app_id=com.huawei.ipd.rawreq',
-  description: '',
-  tags: ['原始需求', '配置管理', '测试环境'],
-  guoNei: true,
-  account: '',
-},{
-  title: '原始需求-发布流水线',
-  link: 'https://edevops.huawei.com/mine/components/10063900/pipeline/list/158156',
-  description: '',
-  tags: ['原始需求', '发布', '测试环境', '正式环境'],
-  guoNei: true,
-  account: '',
-},{
-  title: '原始需求-前端资源平台',
-  link: 'http://console.his-beta.huawei.com/wcm/#/staticresource/staticresourceDeploy.html',
-  description: '',
-  tags: ['原始需求', '前端资源', '测试环境'],
-  guoNei: true,
-  account: '',
-},{
-  title: '原始需求-ALB',
-  link: 'https://console.his-beta.huawei.com/alb/#/appOverview?servicealias=alb&app_id=com.huawei.ipd.rawreq',
-  description: '',
-  tags: ['原始需求', '测试环境'],
-  guoNei: true,
-  account: '',
-},{
-  title: '原始需求-数据库-测试环境',
-  link: 'https://console-kwe.his-beta.huawei.com/dbadvisor/#/instanceDashboard',
-  description: '',
-  tags: ['原始需求', '测试环境','数据库'],
-  guoNei: true,
-  account: '',
-},{
-  title: '心声 征婚',
-  link: 'https://xinsheng.huawei.com/next/#/list?id=713534611705233408&cid=713570454708776960&flag=all&search=&sort=createTime&type=all&p=1',
-  description: '',
-  tags: ['摸鱼', '心声','数据库'],
-  guoNei: true,
-  account: '',
-},];
+  title: 'api接口平台',
+  gitee: '',
+  description: '待开发',
+  tags: ['api接口'],
+  gitHub: '',
+}, ];
 const state = reactive({
   searchText: '',
   searchedColumn: '',
@@ -100,13 +103,6 @@ const columns = [
     width: 200,
   },
   {
-    title: '链接',
-    dataIndex: 'link',
-    key: 'link',
-    ellipsis: true,
-    resizable: true,
-  },
-  {
     title: '描述',
     dataIndex: 'description',
     key: 'description',
@@ -129,6 +125,20 @@ const columns = [
     ellipsis: true, resizable: true,
   },
   {
+    title: 'Gitee',
+    dataIndex: 'gitee',
+    key: 'gitee',
+    ellipsis: true,
+    resizable: true,
+  },
+  {
+    title: 'gitHub',
+    dataIndex: 'gitHub',
+    key: 'gitHub',
+    ellipsis: true,
+    resizable: true,
+  },
+  {
     title: '标签',
     dataIndex: 'tags',
     key: 'tags',
@@ -142,18 +152,6 @@ const columns = [
         return true
       }
     },
-    ellipsis: true, resizable: true,
-  },
-  {
-    title: '访问',
-    dataIndex: 'guoNei',
-    key: 'guoNei',
-    ellipsis: true, resizable: true,
-  },
-  {
-    title: '操作',
-    dataIndex: 'action',
-    key: 'action',
     ellipsis: true, resizable: true,
   },
 ]
@@ -226,9 +224,14 @@ const maxTalbeY = window.innerHeight - 200
           {{ record.title }}
         </a>
       </template>
-      <template v-if="column.key === 'link'">
-        <a :href="record.link" target="_blank">
-          {{ record.link }}
+      <template v-else-if="column.key === 'gitHub'">
+        <a :href="record.gitHub" target="_blank">
+          {{ record.gitHub }}
+        </a>
+      </template>
+      <template v-else-if="column.key === 'gitee'">
+        <a :href="record.gitee" target="_blank">
+          {{ record.gitee }}
         </a>
       </template>
       <template v-else-if="column.key === 'tags'">
@@ -241,23 +244,6 @@ const maxTalbeY = window.innerHeight - 200
             {{ tag }}
           </a-tag>
         </span>
-      </template>
-      <template v-else-if="column.key === 'guoNei'">
-        <span>
-          <a-switch v-model:checked="record.guoNei" checked-children="国内" un-checked-children="国外"></a-switch>
-        </span>
-      </template>
-      <template v-else-if="column.key === 'action'">
-        <!--        <span>-->
-        <!--          <a>Invite 一 {{ record.name }}</a>-->
-        <!--          <a-divider type="vertical" />-->
-        <!--          <a>Delete</a>-->
-        <!--          <a-divider type="vertical" />-->
-        <!--          <a class="ant-dropdown-link">-->
-        <!--            More actions-->
-        <!--            <down-outlined />-->
-        <!--          </a>-->
-        <!--        </span>-->
       </template>
     </template>
   </a-table>

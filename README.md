@@ -14,7 +14,7 @@
 
 技术方案：每天定时启动程序去读取网站，然后进行文件写，并将数据推送到最新git中
 
-- [ ] 待收集我的git项目
+- [x] 待收集我的git项目
 
 * 生活博客打包：https://github.com/seven-it-work/love(主) https://gitee.com/GTeam_seven/love(同)
 * 生活博客源码：https://github.com/seven-it-work/love-source
@@ -26,5 +26,6 @@
 * 江湖文字游戏：https://github.com/seven-it-work/MyJangHu
 * mud-game：https://github.com/seven-it-work/mud-game
 * 电子书收集：https://github.com/seven-it-work/book
+* api接口平台（待开发）：
 
 - [ ] 
