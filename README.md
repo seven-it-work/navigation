@@ -22,7 +22,7 @@
 * 导航源码：https://github.com/seven-it-work/navigation https://gitee.com/GTeam_seven/navigation
 * 游戏集合：https://gitee.com/GTeam_seven/game-collection
 * win自动任务程序：https://github.com/seven-it-work/personal-assistant
-* 图床：https://gitee.com/GTeam_seven/drawing-bed
+* 图床：https://gitee.com/GTeam_seven/drawing-bed github
 * 江湖文字游戏：https://github.com/seven-it-work/MyJangHu
 * mud-game：https://github.com/seven-it-work/mud-game
 * 电子书收集：https://github.com/seven-it-work/book
