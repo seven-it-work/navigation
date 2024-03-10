@@ -4,7 +4,8 @@ echo %~dp0
 
 cd /d %~dp0
 
-git fetch
+git fetch origin
 
-git checkout origin/master
+git merge origin/main
 
+pause
