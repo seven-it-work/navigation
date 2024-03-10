@@ -71,6 +71,12 @@ const dataSource = [{
   description: '待开发',
   tags: ['api接口'],
   gitHub: '',
+},{
+  title: 'git项目自动推送',
+  gitee: '',
+  description: '待开发',
+  tags: ['win自动任务程序','git'],
+  gitHub: 'https://github.com/seven-it-work/scheduledTasks',
 }, ];
 const state = reactive({
   searchText: '',

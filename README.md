@@ -27,6 +27,6 @@
 * mud-game：https://github.com/seven-it-work/mud-game
 * 电子书收集：https://github.com/seven-it-work/book
 * api接口平台（待开发）：
-* win定时推送 scheduledTasks
+* win定时推送 scheduledTasks：https://github.com/seven-it-work/scheduledTasks
 
 - [ ] 
