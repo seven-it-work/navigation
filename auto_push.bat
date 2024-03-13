@@ -4,7 +4,7 @@ echo %~dp0
 
 cd /d %~dp0
 
-call npm run build
+REM call npm run build
 
 git add *
 
