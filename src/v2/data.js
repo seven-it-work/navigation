@@ -127,6 +127,30 @@ const db = [
         guoNei: true,
         account: '',
     },
+    {
+        title: 'ChatGpt导航',
+        link: 'https://fgptss.aifree.site/',
+        description: '免费可以用的ChatGpt',
+        tags: ['ChatGpt','ai'],
+        guoNei: true,
+        account: '',
+    },
+    {
+        title: 'ChatGpt导航',
+        link: 'https://chatgpt.quickso.cn/',
+        description: '免费可以用的ChatGpt',
+        tags: ['ChatGpt','ai'],
+        guoNei: true,
+        account: '',
+    },
+    {
+        title: 'ChatGpt导航',
+        link: 'https://lzw.me/x/chatgpt-sites/',
+        description: '免费可以用的ChatGpt',
+        tags: ['ChatGpt','ai'],
+        guoNei: true,
+        account: '',
+    },
 ]
 for (let i = 0; i < db.length; i++) {
     db[i].key = i;
