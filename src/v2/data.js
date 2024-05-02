@@ -25,6 +25,14 @@ const db = [
     },
     {
         title: 'steam游戏账号',
+        link: 'https://www.cmdwgame.com/',
+        description: '',
+        tags: ['游戏','steam'],
+        guoNei: true,
+        account: 'sevenyjl',
+    },
+    {
+        title: 'steam游戏账号',
         link: 'https://kkdda.cn/',
         description: '',
         tags: ['游戏','steam'],
