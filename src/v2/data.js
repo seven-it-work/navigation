@@ -32,6 +32,14 @@ const db = [
         account: 'sevenyjl',
     },
     {
+        title: '破解论坛',
+        link: 'https://redrabbitbbs.com/',
+        description: '',
+        tags: ['游戏','破解'],
+        guoNei: true,
+        account: 'sevenyjl',
+    },
+    {
         title: 'steam游戏账号',
         link: 'https://kkdda.cn/',
         description: '',
