@@ -68,6 +68,34 @@ const dataSource = [{
   tags: ['摸鱼', '心声','数据库'],
   guoNei: true,
   account: '',
+},{
+  title: '漏洞eshow看板',
+  link: 'https://eshow.ipd.huawei.com/ipdgo/static/eshow/plugins/plug_000000006387/index.html#/openSourceView/opensourceManage',
+  description: '',
+  tags: ['漏洞','生产'],
+  guoNei: true,
+  account: '',
+},{
+  title: '漏洞eshow看板',
+  link: 'https://portal.edevops.huawei.com/cloudroc/portal/service/8103145104797794312/hole',
+  description: '',
+  tags: ['漏洞','生产'],
+  guoNei: true,
+  account: '',
+},{
+  title: '依赖版本查询（开源中心仓查询）',
+  link: 'https://portal.edevops.huawei.com/opensource-website/project/gd05252cf9b50467d978719ff6a3d50d3/opensource-center',
+  description: '',
+  tags: ['漏洞','开源查询'],
+  guoNei: true,
+  account: '',
+},{
+  title: 'eShow看板',
+  link: 'https://eshow.edevops.huawei.com/paas/function/opensource',
+  description: '',
+  tags: ['漏洞','生产'],
+  guoNei: true,
+  account: '',
 },];
 const state = reactive({
   searchText: '',

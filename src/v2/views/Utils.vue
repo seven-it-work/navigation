@@ -1,5 +1,6 @@
 <script>
 import {pinyin} from 'pinyin-pro'
+import htmlToPug from "./htmlToPug.vue";
 
 function capitalizeFirstLetter(string) {
   return string.toLowerCase().replace(/\b[a-z]/g, function(match) {
@@ -9,6 +10,7 @@ function capitalizeFirstLetter(string) {
 
 export default {
   name: "Utils",
+  components: {htmlToPug},
   data() {
     return {
       chineseCharacter: "",
@@ -29,6 +31,7 @@ export default {
 </script>
 
 <template>
+  <htmlToPug></htmlToPug>
   <div>
     <a-input v-model:value="chineseCharacter" :placeholder="`输入汉字`"></a-input>
     <a-button @click="chineseCharacterChange">转换</a-button>
