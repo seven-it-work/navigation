@@ -15,7 +15,9 @@ export default {
   },
   mounted() {
     this.ccbListShow = true
-    this.ccbList = goldData
+    try {
+        this.ccbList = goldData
+    }catch (e){}
     setTimeout(() => {
       const chartDom = document.getElementById('ccbListShow');
       const myChart = echarts.init(chartDom);
@@ -136,7 +138,7 @@ export default {
 </script>
 
 <template>
-  <div v-if="ccbListShow">
+  <div v-if="ccbListShow && ccbList && ccbList.length>1">
     <div>
       <span style="margin-right: 10px"><a href="http://www3.ccb.com/chn/home/gold_new/hqzs/index.shtml" target="_blank">黄金积存报价</a></span>
       <span style="margin-right: 10px">时间：{{ ccbList[ccbList.length - 1].time }}</span>
