@@ -6,10 +6,11 @@ import {pinyin} from 'pinyin-pro';
 import {tagColor, tagsAll} from "../tagColors.js";
 
 const dataSource = [{
-  title: '生活博客打包',
+  title: '生活博客部署',
   gitee: 'https://gitee.com/GTeam_seven/love',
   description: `<div><a href="//love.seven.cn">love.seven.cn</a></div>
   <div><a href="https://love-source.vercel.app/">vercel</a></div>
+  <div><a href="https://seven-love.netlify.app">netlify</a></div>
   `,
   tags: ['生活博客'],
   gitHub: 'https://github.com/seven-it-work/love',
@@ -26,10 +27,11 @@ const dataSource = [{
   tags: ['技术博客'],
   gitHub: 'https://github.com/seven-it-work/my-blog',
 },{
-  title: '技术博客打包',
+  title: '技术博客部署',
   gitee: '',
     description: `<div><a href="//seven-it-work.github.io">GitHub Pages</a></div>
   <div><a href="https://my-blog-alpha.vercel.app/">vercel</a></div>
+  <div><a href="https://seven-blog.netlify.app/">netlify</a></div>
   `,
   tags: ['技术博客'],
   gitHub: 'https://github.com/seven-it-work/seven-it-work.github.io',
@@ -38,6 +40,7 @@ const dataSource = [{
   gitee: 'https://gitee.com/GTeam_seven/navigation',
     description: `<div><a href="https://seven-it-work.github.io/navigation/">GitHub Pages</a></div>
   <div><a href="https://navigation-mu.vercel.app/#/">vercel</a></div>
+  <div><a href="https://seven-navigation.netlify.app/">netlify</a></div>
   `,
   tags: ['导航源码'],
   gitHub: 'https://github.com/seven-it-work/navigation',
