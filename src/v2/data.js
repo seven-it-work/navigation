@@ -1,5 +1,21 @@
 const db = [
     {
+        title: '面试宝典',
+        link: 'https://ddkk.com/',
+        description: 'Java面试宝典',
+        tags: ['面试', 'java'],
+        guoNei: true,
+        account: '',
+    },
+    {
+        title: '面试宝典',
+        link: 'https://programmercarl.com/',
+        description: 'Java面试宝典',
+        tags: ['面试', 'java'],
+        guoNei: true,
+        account: '',
+    },
+    {
         title: '小狸源码网',
         link: 'https://www.agmsy.com/',
         description: '游戏源码',
